@@ -7,8 +7,7 @@ import org.ZYX.demo.jvm.classfile.constantpool.ConstantPool;
 import java.util.Map;
 
 /**
- * http://www.itstack.org
- * create by fuzhengwei on 2019/4/26
+ * create by ZYX on 2021/5/28
  */
 public class ConstantMemberRefInfo implements ConstantInfo {
 

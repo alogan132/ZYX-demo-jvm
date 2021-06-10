@@ -5,8 +5,7 @@ import org.ZYX.demo.jvm.rtda.Frame;
 import org.ZYX.demo.jvm.rtda.Thread;
 
 /**
- * http://www.itstack.org
- * create by fuzhengwei on 2019/4/27
+ * create by ZYX on 2021/5/28
  */
 public class DRETURN extends InstructionNoOperands {
 

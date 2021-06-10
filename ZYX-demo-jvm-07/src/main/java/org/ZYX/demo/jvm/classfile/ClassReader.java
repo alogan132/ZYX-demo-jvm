@@ -3,8 +3,7 @@ package org.ZYX.demo.jvm.classfile;
 import java.math.BigInteger;
 
 /**
- * http://www.itstack.org
- * create by fuzhengwei on 2019/5/13
+ * create by ZYX on 2021/5/28
  * <p>
  * java虚拟机定义了u1、u2、u4三种数据类型来表示；1字节、2字节、4字节，无符号整数。
  * 在如下实现中，用增位方式表示无符号类型：

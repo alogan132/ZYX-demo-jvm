@@ -6,8 +6,7 @@ import org.ZYX.demo.jvm.rtda.OperandStack;
 import org.ZYX.demo.jvm.rtda.heap.methodarea.Object;
 
 /**
- * http://www.itstack.org
- * create by fuzhengwei on 2019/4/27
+ * create by ZYX on 2021/5/28
  */
 public class AASTORE extends InstructionNoOperands {
 

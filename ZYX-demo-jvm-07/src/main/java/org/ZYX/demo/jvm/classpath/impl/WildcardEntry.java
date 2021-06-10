@@ -8,8 +8,7 @@ import java.nio.file.Paths;
 import java.util.stream.Collectors;
 
 /**
- * http://www.itstack.org
- * create by fuzhengwei on 2019/4/24
+ * create by ZYX on 2021/5/28
  * 通配符类路径，继承CompositeEntry
  */
 public class WildcardEntry extends CompositeEntry {

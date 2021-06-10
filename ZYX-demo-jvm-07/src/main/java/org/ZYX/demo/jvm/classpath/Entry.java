@@ -9,8 +9,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * http://www.itstack.org
- * create by fuzhengwei on 2019/4/24
+ * create by ZYX on 2021/5/28
  * 类路径接口
  */
 public interface Entry {

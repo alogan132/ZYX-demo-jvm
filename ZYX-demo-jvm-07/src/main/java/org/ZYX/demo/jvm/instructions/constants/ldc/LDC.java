@@ -6,8 +6,7 @@ import org.ZYX.demo.jvm.rtda.OperandStack;
 import org.ZYX.demo.jvm.rtda.heap.constantpool.RunTimeConstantPool;
 
 /**
- * http://www.itstack.org
- * create by fuzhengwei on 2019/4/28
+ * create by ZYX on 2021/5/28
  */
 public class LDC extends InstructionIndex8 {
 

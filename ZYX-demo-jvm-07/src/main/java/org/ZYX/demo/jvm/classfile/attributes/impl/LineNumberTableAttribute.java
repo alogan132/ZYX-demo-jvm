@@ -4,8 +4,7 @@ import org.ZYX.demo.jvm.classfile.ClassReader;
 import org.ZYX.demo.jvm.classfile.attributes.AttributeInfo;
 
 /**
- * http://www.itstack.org
- * create by fuzhengwei on 2019/4/26
+ * create by ZYX on 2021/5/28
  */
 public class LineNumberTableAttribute implements AttributeInfo {
 

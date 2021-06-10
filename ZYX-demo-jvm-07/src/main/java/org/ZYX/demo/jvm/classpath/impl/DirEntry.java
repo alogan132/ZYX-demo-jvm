@@ -8,8 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- * http://www.itstack.org
- * create by fuzhengwei on 2019/4/24
+ * create by ZYX on 2021/5/28
  * 目录形式的类路径
  */
 public class DirEntry implements Entry {

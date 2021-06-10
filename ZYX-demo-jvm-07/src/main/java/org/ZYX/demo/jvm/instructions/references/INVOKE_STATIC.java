@@ -10,8 +10,7 @@ import org.ZYX.demo.jvm.rtda.heap.methodarea.Class;
 import org.ZYX.demo.jvm.rtda.heap.methodarea.Method;
 
 /**
- * http://www.itstack.org
- * create by fuzhengwei on 2019/4/28
+ * create by ZYX on 2021/5/28
  * invokestatic调用static方法
  */
 public class INVOKE_STATIC extends InstructionIndex16 {

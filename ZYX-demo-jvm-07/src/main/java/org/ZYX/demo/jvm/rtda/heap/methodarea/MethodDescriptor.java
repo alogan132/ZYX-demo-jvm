@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * http://www.itstack.org
- * create by fuzhengwei on 2019/4/28
+ * create by ZYX on 2021/5/28
  */
 public class MethodDescriptor {
 

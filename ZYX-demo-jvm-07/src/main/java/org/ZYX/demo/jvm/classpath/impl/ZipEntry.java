@@ -6,8 +6,7 @@ import java.io.IOException;
 import java.nio.file.*;
 
 /**
- * http://www.itstack.org
- * create by fuzhengwei on 2019/4/24
+ * create by ZYX on 2021/5/28
  * zip/zar文件形式类路径
  */
 public class ZipEntry implements Entry {

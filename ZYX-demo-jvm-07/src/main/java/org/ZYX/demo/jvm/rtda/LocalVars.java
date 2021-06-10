@@ -3,8 +3,7 @@ package org.ZYX.demo.jvm.rtda;
 import org.ZYX.demo.jvm.rtda.heap.methodarea.Object;
 
 /**
- * http://www.itstack.org
- * create by fuzhengwei on 2019/4/26
+ * create by ZYX on 2021/5/28
  * 局部变量表
  */
 public class LocalVars {
