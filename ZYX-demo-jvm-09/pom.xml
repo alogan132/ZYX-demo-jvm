@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ZYX-demo-jvm-08</artifactId>
+    <artifactId>ZYX-demo-jvm-09</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

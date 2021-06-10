@@ -17,6 +17,7 @@
         <module>ZYX-demo-jvm-06</module>
         <module>ZYX-demo-jvm-07</module>
         <module>ZYX-demo-jvm-08</module>
+        <module>ZYX-demo-jvm-09</module>
     </modules>
 
     <dependencies>
