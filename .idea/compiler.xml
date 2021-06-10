@@ -12,10 +12,13 @@
         <module name="ZYX-demo-jvm-04" />
         <module name="ZYX-demo-jvm-03" />
         <module name="ZYX-demo-jvm-02" />
-        <module name="ZYX-demo-jvm-08" />
         <module name="ZYX-demo-jvm-07" />
         <module name="ZYX-demo-jvm-06" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ZYX-demo-jvm-08" target="8" />
+      <module name="ZYX-demo-jvm-09" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
