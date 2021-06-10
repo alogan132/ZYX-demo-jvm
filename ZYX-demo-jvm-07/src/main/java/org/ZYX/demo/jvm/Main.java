@@ -6,14 +6,14 @@ import org.ZYX.demo.jvm.rtda.heap.methodarea.Class;
 import org.ZYX.demo.jvm.rtda.heap.methodarea.Method;
 
 /**
- * create by ZYX on 2021/5/24
-
+ * http://www.itstack.org
+ * create by fuzhengwei on 2019/4/24
  */
 public class Main {
 
     public static void main(String[] args) {
         Cmd cmd = Cmd.parse(args);
-        if (!cmd.ok || cmd.helpFlag) {
+        if (!cmd.ok || cmd.helpFlag || args.length == 0) {
             System.out.println("Usage: <main class> [-options] class [args...]");
             return;
         }
@@ -25,6 +25,7 @@ public class Main {
         startJVM(cmd);
     }
 
+
     private static void startJVM(Cmd cmd) {
         Classpath classpath = new Classpath(cmd.jre, cmd.classpath);
         ClassLoader classLoader = new ClassLoader(classpath);
@@ -35,7 +36,7 @@ public class Main {
         if (null == mainMethod) {
             throw new RuntimeException("Main method not found in class " + cmd.getMainClass());
         }
-        new Interpret(mainMethod);
+        new Interpret(mainMethod, cmd.verboseClassFlag);
     }
 
 }

@@ -4,15 +4,16 @@ import org.ZYX.demo.jvm.classfile.ClassReader;
 import org.ZYX.demo.jvm.classfile.constantpool.ConstantInfo;
 
 /**
- * create by ZYX on 2021/5/24
+ * http://www.itstack.org
+ * create by fuzhengwei on 2019/4/26
  */
 public class ConstantIntegerInfo implements ConstantInfo {
 
-    private int val;
+    private long val;
 
     @Override
     public void readInfo(ClassReader reader) {
-        this.val = reader.readUint32TInteger();
+        this.val = reader.readUint32();
     }
 
     @Override
@@ -20,7 +21,7 @@ public class ConstantIntegerInfo implements ConstantInfo {
         return this.CONSTANT_TAG_INTEGER;
     }
 
-    public int value(){
+    public long value(){
         return this.val;
     }
 

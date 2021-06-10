@@ -16,9 +16,13 @@ public class GET_FIELD extends InstructionIndex16 {
         RunTimeConstantPool runTimeConstantPool = frame.method().clazz().constantPool();
         FieldRef fieldRef = (FieldRef) runTimeConstantPool.getConstants(this.idx);
         Field field = fieldRef.resolvedField();
-
+        //java.lang.IncompatibleClassChangeError
+        if (field.isStatic()){
+            throw new IncompatibleClassChangeError();
+        }
         OperandStack stack = frame.operandStack();
         Object ref = stack.popRef();
+        //java.lang.NullPointerException
         if (null == ref) {
             throw new NullPointerException();
         }

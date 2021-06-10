@@ -3,7 +3,8 @@ package org.ZYX.demo.jvm.rtda;
 import org.ZYX.demo.jvm.rtda.heap.methodarea.Object;
 
 /**
- * create by ZYX on 2021/5/24
+ * http://www.itstack.org
+ * create by fuzhengwei on 2019/4/26
  * 局部变量表
  */
 public class LocalVars {
@@ -61,6 +62,10 @@ public class LocalVars {
 
     public Object getRef(int idx) {
         return slots[idx].ref;
+    }
+
+    public void setSlot(int idx, Slot slot) {
+        this.slots[idx] = slot;
     }
 
     public Slot[] getSlots() {

@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * create by ZYX on 2021/5/24
+ * http://www.itstack.org
+ * create by fuzhengwei on 2019/4/24
  */
 public class CompositeEntry implements Entry {
 

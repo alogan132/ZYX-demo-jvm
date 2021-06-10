@@ -1,5 +1,6 @@
 package org.ZYX.demo.jvm.instructions.references;
 
+import org.ZYX.demo.jvm.instructions.base.ClassInitLogic;
 import org.ZYX.demo.jvm.instructions.base.InstructionIndex16;
 import org.ZYX.demo.jvm.rtda.Frame;
 import org.ZYX.demo.jvm.rtda.OperandStack;
@@ -20,11 +21,27 @@ public class PUT_STATIC extends InstructionIndex16 {
         FieldRef fieldRef = (FieldRef) runTimeConstantPool.getConstants(this.idx);
         Field field = fieldRef.resolvedField();
         Class clazz = field.clazz();
+        if (!clazz.initStarted()) {
+            frame.revertNextPC();
+            ClassInitLogic.initClass(frame.thread(), clazz);
+            return;
+        }
+
+        if (!field.isStatic()) {
+            throw new IncompatibleClassChangeError();
+        }
+
+        if (field.isFinal()) {
+            if (currentClazz != clazz || !"<clinit>".equals(currentMethod.name())) {
+                throw new IllegalAccessError();
+            }
+        }
 
         String descriptor = field.descriptor();
         int slotId = field.slotId();
         Slots slots = clazz.staticVars();
         OperandStack stack = frame.operandStack();
+        
         switch (descriptor.substring(0, 1)) {
             case "Z":
             case "B":

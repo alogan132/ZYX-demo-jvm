@@ -1,7 +1,8 @@
 package org.ZYX.demo.jvm.rtda;
 
 /**
- * create by ZYX on 2021/5/24
+ * http://www.itstack.org
+ * create by fuzhengwei on 2019/4/26
  * 虚拟机栈
  */
 public class JvmStack {
@@ -45,6 +46,10 @@ public class JvmStack {
             throw new RuntimeException("jvm stack is empty!");
         }
         return this._top;
+    }
+
+    public boolean isEmpty(){
+        return this._top == null;
     }
 
 }

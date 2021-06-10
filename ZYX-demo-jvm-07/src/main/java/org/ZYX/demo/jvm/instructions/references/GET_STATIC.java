@@ -1,5 +1,6 @@
 package org.ZYX.demo.jvm.instructions.references;
 
+import org.ZYX.demo.jvm.instructions.base.ClassInitLogic;
 import org.ZYX.demo.jvm.instructions.base.InstructionIndex16;
 import org.ZYX.demo.jvm.rtda.Frame;
 import org.ZYX.demo.jvm.rtda.OperandStack;
@@ -16,10 +17,17 @@ public class GET_STATIC extends InstructionIndex16 {
         RunTimeConstantPool runTimeConstantPool = frame.method().clazz().constantPool();
         FieldRef ref = (FieldRef) runTimeConstantPool.getConstants(this.idx);
         Field field = ref.resolvedField();
-        if (!field.isStatic()){
+        Class clazz = field.clazz();
+        if (!clazz.initStarted()) {
+            frame.revertNextPC();
+            ClassInitLogic.initClass(frame.thread(), clazz);
+            return;
+        }
+        //java.lang.IncompatibleClassChangeError
+        if (!field.isStatic()) {
             throw new IncompatibleClassChangeError();
         }
-        Class clazz = field.clazz();
+
         String descriptor = field.descriptor();
         int slotId = field.slotId();
         Slots slots = clazz.staticVars();

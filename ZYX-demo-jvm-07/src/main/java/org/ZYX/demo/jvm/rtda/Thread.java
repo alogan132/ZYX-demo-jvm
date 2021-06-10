@@ -3,7 +3,8 @@ package org.ZYX.demo.jvm.rtda;
 import org.ZYX.demo.jvm.rtda.heap.methodarea.Method;
 
 /**
- * create by ZYX on 2021/5/24
+ * http://www.itstack.org
+ * create by fuzhengwei on 2019/4/26
  * 线程
  */
 public class Thread {
@@ -40,6 +41,10 @@ public class Thread {
 
     public Frame topFrame(){
         return this.stack.top();
+    }
+
+    public boolean isStackEmpty(){
+        return this.stack.isEmpty();
     }
 
     public Frame newFrame(Method method) {

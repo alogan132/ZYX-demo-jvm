@@ -4,29 +4,47 @@ import org.ZYX.demo.jvm.classfile.MemberInfo;
 import org.ZYX.demo.jvm.classfile.attributes.impl.CodeAttribute;
 import org.ZYX.demo.jvm.rtda.heap.constantpool.AccessFlags;
 
+import java.util.List;
+
 public class Method extends ClassMember {
 
     public int maxStack;
     public int maxLocals;
     public byte[] code;
+    private int argSlotCount;
 
-    public Method[] newMethods(Class clazz, MemberInfo[] cfMethods) {
+    Method[] newMethods(Class clazz, MemberInfo[] cfMethods) {
         Method[] methods = new Method[cfMethods.length];
         for (int i = 0; i < cfMethods.length; i++) {
             methods[i] = new Method();
             methods[i].clazz = clazz;
             methods[i].copyMemberInfo(cfMethods[i]);
             methods[i].copyAttributes(cfMethods[i]);
+            methods[i].calcArgSlotCount();
         }
         return methods;
     }
 
-    public void copyAttributes(MemberInfo cfMethod) {
+    private void copyAttributes(MemberInfo cfMethod) {
         CodeAttribute codeAttr = cfMethod.codeAttribute();
         if (null != codeAttr) {
             this.maxStack = codeAttr.maxStack();
             this.maxLocals = codeAttr.maxLocals();
             this.code = codeAttr.data();
+        }
+    }
+
+    private void calcArgSlotCount() {
+        MethodDescriptor parsedDescriptor = MethodDescriptorParser.parseMethodDescriptorParser(this.descriptor);
+        List<String> parameterTypes = parsedDescriptor.parameterTypes;
+        for (String paramType : parameterTypes) {
+            this.argSlotCount++;
+            if ("J".equals(paramType) || "D".equals(paramType)) {
+                this.argSlotCount++;
+            }
+        }
+        if (!this.isStatic()) {
+            this.argSlotCount++;
         }
     }
 
@@ -64,6 +82,10 @@ public class Method extends ClassMember {
 
     public byte[] code() {
         return this.code;
+    }
+
+    public int argSlotCount() {
+        return this.argSlotCount;
     }
 
 }

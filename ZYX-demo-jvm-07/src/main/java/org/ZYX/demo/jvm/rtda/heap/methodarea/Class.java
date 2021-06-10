@@ -20,6 +20,7 @@ public class Class {
     public int instanceSlotCount;
     public int staticSlotCount;
     public Slots staticVars;
+    public boolean initStarted;
 
     public Class(ClassFile classFile) {
         this.accessFlags = classFile.accessFlags();
@@ -67,8 +68,36 @@ public class Class {
         return this.runTimeConstantPool;
     }
 
+    public String name() {
+        return name;
+    }
+
+    public RunTimeConstantPool runTimeConstantPool() {
+        return runTimeConstantPool;
+    }
+
+    public Field[] fields() {
+        return fields;
+    }
+
+    public Method[] methods() {
+        return methods;
+    }
+
+    public Class superClass() {
+        return superClass;
+    }
+
     public Slots staticVars() {
         return this.staticVars;
+    }
+
+    public boolean initStarted(){
+        return this.initStarted;
+    }
+
+    public void startInit(){
+        this.initStarted = true;
     }
 
     public boolean isAccessibleTo(Class other) {
@@ -94,6 +123,10 @@ public class Class {
         return null;
     }
 
+    public Method getClinitMethod(){
+        return this.getStaticMethod("<clinit>","()V");
+    }
+
     public Object newObject() {
         return new Object(this);
     }
@@ -116,7 +149,7 @@ public class Class {
         return false;
     }
 
-    private boolean isImplements(Class other) {
+    public boolean isImplements(Class other) {
 
         for (Class c = this; c != null; c = c.superClass) {
             for (Class clazz : c.interfaces) {

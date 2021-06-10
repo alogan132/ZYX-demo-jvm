@@ -9,17 +9,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * create by ZYX on 2021/5/24
+ * http://www.itstack.org
+ * create by fuzhengwei on 2019/4/26
  */
 public class ConstantPool {
 
     private ConstantInfo[] constantInfos;
-    private final int size;
+    private final int siz;
 
     public ConstantPool(ClassReader reader) {
-        size = reader.readUint16();
-        constantInfos = new ConstantInfo[size];
-        for (int i = 1; i < size; i++) {
+        siz = reader.readUint16();
+        constantInfos = new ConstantInfo[siz];
+        for (int i = 1; i < siz; i++) {
 
             constantInfos[i] = ConstantInfo.readConstantInfo(reader, this);
 
@@ -58,7 +59,7 @@ public class ConstantPool {
         this.constantInfos = constantInfos;
     }
 
-    public int getSize() {
-        return size;
+    public int getSiz() {
+        return siz;
     }
 }

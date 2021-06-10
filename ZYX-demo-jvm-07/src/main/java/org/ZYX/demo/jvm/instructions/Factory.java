@@ -123,12 +123,12 @@ public class Factory {
                 return new BIPUSH();
             case 0x11:
                 return new SIPUSH();
-            case 0x12:
-                return new LDC();
-            case 0x13:
-                return new LDC_W();
-            case 0x14:
-                return new LDC2_W();
+             case 0x12:
+             	return new LDC();
+             case 0x13:
+             	return new LDC_W();
+             case 0x14:
+             	return new LDC2_W();
             case 0x15:
                 return new ILOAD();
             case 0x16:
@@ -455,10 +455,10 @@ public class Factory {
                 return new INVOKE_VIRTUAL();
             case (byte) 0xb7:
                 return new INVOKE_SPECIAL();
-            // case 0xb8:
-            // 	return &INVOKE_STATIC{}
-            // case 0xb9:
-            // 	return &INVOKE_INTERFACE{}
+             case (byte) 0xb8:
+             	return new INVOKE_STATIC();
+             case (byte) 0xb9:
+             	return new INVOKE_INTERFACE();
             // case 0xba:
             // 	return &INVOKE_DYNAMIC{}
             case (byte) 0xbb:

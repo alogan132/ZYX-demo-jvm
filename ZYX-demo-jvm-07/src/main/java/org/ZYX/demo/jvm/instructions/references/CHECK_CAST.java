@@ -19,6 +19,9 @@ public class CHECK_CAST extends InstructionIndex16 {
         RunTimeConstantPool cp = frame.method().clazz().constantPool();
         ClassRef clazzRef = (ClassRef) cp.getConstants(this.idx);
         Class clazz = clazzRef.resolvedClass();
+        if (!ref.isInstanceOf(clazz)) {
+            throw new ClassCastException();
+        }
     }
 
 }

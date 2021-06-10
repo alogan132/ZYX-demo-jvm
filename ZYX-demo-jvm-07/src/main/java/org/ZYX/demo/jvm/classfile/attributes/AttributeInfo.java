@@ -5,7 +5,8 @@ import org.ZYX.demo.jvm.classfile.attributes.impl.*;
 import org.ZYX.demo.jvm.classfile.constantpool.ConstantPool;
 
 /**
- * create by ZYX on 2021/5/24
+ * http://www.itstack.org
+ * create by fuzhengwei on 2019/4/26
  */
 public interface AttributeInfo {
 
@@ -23,7 +24,7 @@ public interface AttributeInfo {
     static AttributeInfo readAttribute(ClassReader reader, ConstantPool constantPool) {
         int attrNameIdx = reader.readUint16();
         String attrName = constantPool.getUTF8(attrNameIdx);
-        int attrLen = reader.readUint32TInteger();
+        int attrLen = (int) reader.readUint32();
         AttributeInfo attrInfo = newAttributeInfo(attrName, attrLen, constantPool);
         attrInfo.readInfo(reader);
         return attrInfo;

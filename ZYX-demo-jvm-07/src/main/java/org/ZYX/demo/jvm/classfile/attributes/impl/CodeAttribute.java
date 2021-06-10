@@ -5,7 +5,8 @@ import org.ZYX.demo.jvm.classfile.attributes.AttributeInfo;
 import org.ZYX.demo.jvm.classfile.constantpool.ConstantPool;
 
 /**
- * create by ZYX on 2021/5/24
+ * http://www.itstack.org
+ * create by fuzhengwei on 2019/4/26
  */
 public class CodeAttribute implements AttributeInfo {
 
@@ -24,7 +25,7 @@ public class CodeAttribute implements AttributeInfo {
     public void readInfo(ClassReader reader) {
         this.maxStack = reader.readUint16();
         this.maxLocals = reader.readUint16();
-        int dataLength = reader.readUint32TInteger();
+        int dataLength = (int) reader.readUint32();
         this.data = reader.readBytes(dataLength);
         this.exceptionTable = ExceptionTableEntry.readExceptionTable(reader);
         this.attributes = AttributeInfo.readAttributes(reader, this.constantPool);
@@ -46,20 +47,11 @@ public class CodeAttribute implements AttributeInfo {
         return this.exceptionTable;
     }
 
-    public LineNumberTableAttribute lineNumberTableAttribute() {
-        for (AttributeInfo attrInfo : this.attributes) {
-            if (attrInfo instanceof LineNumberTableAttribute) {
-                return (LineNumberTableAttribute) attrInfo;
-            }
-        }
-        return null;
-    }
-
     public AttributeInfo[] attributes() {
         return this.attributes;
     }
 
-    public static class ExceptionTableEntry {
+    static class ExceptionTableEntry {
 
         private int startPC;
         private int endPC;

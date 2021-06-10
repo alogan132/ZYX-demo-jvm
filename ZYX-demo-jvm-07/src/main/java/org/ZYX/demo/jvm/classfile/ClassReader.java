@@ -3,7 +3,8 @@ package org.ZYX.demo.jvm.classfile;
 import java.math.BigInteger;
 
 /**
- * create by ZYX on 2021/5/24
+ * http://www.itstack.org
+ * create by fuzhengwei on 2019/5/13
  * <p>
  * java虚拟机定义了u1、u2、u4三种数据类型来表示；1字节、2字节、4字节，无符号整数。
  * 在如下实现中，用增位方式表示无符号类型：
@@ -35,11 +36,6 @@ public class ClassReader {
         byte[] val = readByte(4);
         String str_hex = new BigInteger(1, val).toString(16);
         return Long.parseLong(str_hex, 16);
-    }
-
-    public int readUint32TInteger(){
-        byte[] val = readByte(4);
-        return new BigInteger(1, val).intValue();
     }
 
     public float readUint64TFloat() {

@@ -5,7 +5,8 @@ import org.ZYX.demo.jvm.classfile.constantpool.ConstantInfo;
 import org.ZYX.demo.jvm.classfile.constantpool.ConstantPool;
 
 /**
- * create by ZYX on 2021/5/24
+ * http://www.itstack.org
+ * create by fuzhengwei on 2019/4/26
  */
 public class ConstantClassInfo implements ConstantInfo {
 

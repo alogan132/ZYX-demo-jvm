@@ -3,7 +3,8 @@ package org.ZYX.demo.jvm.rtda;
 import org.ZYX.demo.jvm.rtda.heap.methodarea.Method;
 
 /**
- * create by ZYX on 2021/5/24
+ * http://www.itstack.org
+ * create by fuzhengwei on 2019/4/26
  * 栈帧
  */
 public class Frame {
@@ -53,6 +54,10 @@ public class Frame {
 
     public void setNextPC(int nextPC) {
         this.nextPC = nextPC;
+    }
+
+    public void revertNextPC(){
+        this.nextPC = this.thread.pc();
     }
 
 }

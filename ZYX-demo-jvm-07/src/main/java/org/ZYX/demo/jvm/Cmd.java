@@ -6,7 +6,8 @@ import com.beust.jcommander.Parameter;
 import java.util.List;
 
 /**
- * create by ZYX on 2021/5/24
+ * http://www.itstack.org
+ * create by fuzhengwei on 2019/4/24
  */
 public class Cmd {
 
@@ -15,6 +16,9 @@ public class Cmd {
 
     @Parameter(names = "-version", description = "print version and exit", order = 2)
     boolean versionFlag = false;
+
+    @Parameter(names = "verbose", description = "enable verbose output", order = 5)
+    boolean verboseClassFlag = false;
 
     @Parameter(names = {"-cp", "-classpath"}, description = "classpath", order = 1)
     String classpath;

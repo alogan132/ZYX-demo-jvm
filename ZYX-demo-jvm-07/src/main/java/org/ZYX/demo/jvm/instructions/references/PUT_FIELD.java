@@ -20,16 +20,19 @@ public class PUT_FIELD extends InstructionIndex16 {
         FieldRef fieldRef = (FieldRef) runTimeConstantPool.getConstants(this.idx);
         Field field = fieldRef.resolvedField();
         if (field.isStatic()) {
-
+            throw new IncompatibleClassChangeError();
         }
 
         if (field.isFinal()) {
-
+            if (currentClazz != field.clazz() || !"<init>".equals(currentMethod.name())){
+                throw new IllegalAccessError();
+            }
         }
 
         String descriptor = field.descriptor();
         int slotId = field.slotId();
         OperandStack stack = frame.operandStack();
+
         switch (descriptor.substring(0, 1)) {
             case "Z":
             case "B":

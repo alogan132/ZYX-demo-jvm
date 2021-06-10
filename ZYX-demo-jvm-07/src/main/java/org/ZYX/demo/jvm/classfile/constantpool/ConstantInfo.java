@@ -4,7 +4,8 @@ import org.ZYX.demo.jvm.classfile.ClassReader;
 import org.ZYX.demo.jvm.classfile.constantpool.impl.*;
 
 /**
- * create by ZYX on 2021/5/24
+ * http://www.itstack.org
+ * create by fuzhengwei on 2019/4/26
  */
 public interface ConstantInfo {
 
@@ -26,7 +27,7 @@ public interface ConstantInfo {
     void readInfo(ClassReader reader);
 
     int tag();
-
+    
     static ConstantInfo readConstantInfo(ClassReader reader, ConstantPool constantPool) {
         int tag = reader.readUint8();
         ConstantInfo constantInfo = newConstantInfo(tag, constantPool);
@@ -65,7 +66,7 @@ public interface ConstantInfo {
             case CONSTANT_TAG_INVOKEDYNAMIC:
                 return new ConstantInvokeDynamicInfo();
             default:
-                throw new ClassFormatError("constant pool tag " + tag);
+                throw new ClassFormatError("constant pool tag");
         }
     }
 }

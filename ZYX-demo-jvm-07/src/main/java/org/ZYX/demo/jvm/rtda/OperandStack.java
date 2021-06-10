@@ -3,7 +3,8 @@ package org.ZYX.demo.jvm.rtda;
 import org.ZYX.demo.jvm.rtda.heap.methodarea.Object;
 
 /**
- * create by ZYX on 2021/5/24
+ * http://www.itstack.org
+ * create by fuzhengwei on 2019/4/26
  * 操作数栈
  */
 public class OperandStack {
@@ -81,6 +82,10 @@ public class OperandStack {
     public Slot popSlot() {
         this.size--;
         return this.slots[this.size];
+    }
+
+    public Object getRefFromTop(int n) {
+        return this.slots[this.size - 1 - n].ref;
     }
 
     public Slot[] getSlots() {
