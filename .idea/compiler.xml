@@ -12,6 +12,7 @@
         <module name="ZYX-demo-jvm-04" />
         <module name="ZYX-demo-jvm-03" />
         <module name="ZYX-demo-jvm-02" />
+        <module name="ZYX-demo-jvm-08" />
         <module name="ZYX-demo-jvm-07" />
         <module name="ZYX-demo-jvm-06" />
       </profile>
