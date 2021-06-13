@@ -1,8 +1,7 @@
 package org.ZYX.demo.test;
 
 /**
- * -Xjre "C:\Program Files\Java\jdk1.8.0_161\jre" E:\itstack\git\istack-demo\itstack-demo-jvm\itstack-demo-jvm-07\target\test-classes\org\itstack\demo\test\HelloWorld verbose true
- * -Xjre "C:\Program Files\Java\jdk1.8.0_161\jre" E:\itstack\git\istack-demo\itstack-demo-jvm\itstack-demo-jvm-07\target\test-classes\org\itstack\demo\test\HelloWorld
+
  * lload_0
  * lconst_1
  * lcmp

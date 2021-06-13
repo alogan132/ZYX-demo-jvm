@@ -6,6 +6,7 @@ import org.ZYX.demo.jvm.rtda.OperandStack;
 import org.ZYX.demo.jvm.rtda.heap.constantpool.MethodRef;
 import org.ZYX.demo.jvm.rtda.heap.constantpool.RunTimeConstantPool;
 
+
 public class INVOKE_VIRTUAL extends InstructionIndex16 {
 
     @Override
